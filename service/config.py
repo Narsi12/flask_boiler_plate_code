@@ -14,7 +14,7 @@ class Config:
 
 class StagingConfig(Config):
     # SQLALCHEMY_DATABASE_URI = postgres_local_base
-    DEBUG = False
+    DEBUG = True
     #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'test.db')
     SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost/test'
     SQLALCHEMY_TRACK_MODIFICATIONS = False

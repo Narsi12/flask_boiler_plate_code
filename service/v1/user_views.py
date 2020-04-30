@@ -32,7 +32,7 @@ class CreateUser(Resource):
         if errors:
             abort(400, str(errors))
 
-        if User.query.filter_by(email=payload['email']):
+        if User.query.filter_by(email=payload['email']).first():
             return jsonify({'message': 'User email already registered'})
         hashed_password = generate_password_hash(payload['password'], method='sha256')
         new_user = User(email=payload['email'], password=hashed_password)

@@ -12,6 +12,9 @@ Flask service needs these environment variables
 
 ### Create virtual environment
     python3 -m venv <virtualenv path and venv name>
+                    or
+    sudo apt-get install virtualenv
+    virtualenv <name>
 
 
 ### Install packages
