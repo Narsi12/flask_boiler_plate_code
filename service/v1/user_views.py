@@ -2,7 +2,7 @@ import jwt
 import datetime
 import os
 from flask import request, abort, jsonify
-from service.Model import db, UserSchema, User
+from service.models import db, UserSchema, User
 from werkzeug.security import generate_password_hash
 from service.decorators import token_required
 from flask import current_app as app

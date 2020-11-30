@@ -25,13 +25,13 @@ Flask service needs these environment variables
 
 Initiate a migration folder using init command for alembic to perform the migrations.
 
-    python manage.py db init
+    python migrate.py db init
 Create a migration script from the detected changes in the model using the migrate command. This doesn’t affect the database yet
     
-    python manage.py db migrate --message 'initial database migration'
+    python migrate.py db migrate --message 'initial database migration'
 Apply the migration script to the database by using the upgrade command
 
-    python manage.py db upgrade
+    python migrate.py db upgrade
 
 **Each time the database model changes, repeat the migrate and upgrade commands**
 

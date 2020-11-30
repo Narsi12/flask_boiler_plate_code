@@ -3,7 +3,7 @@ from flask import Flask, Blueprint
 from .middleware import Middleware
 from service.config import config_by_name
 from .custom_log import get_custom_formatter
-from .Model import db
+from .models import db
 from flask_restplus import Api
 from .custom_exceptions import errors
 from service.v1.test import api as ns1

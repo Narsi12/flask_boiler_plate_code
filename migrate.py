@@ -1,7 +1,7 @@
 import os
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from service.Model import db
+from service.models import db
 from wsgi import create_app
 
 config_name = os.environ['FLASK_ENV']
