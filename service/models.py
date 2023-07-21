@@ -4,10 +4,9 @@ from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import check_password_hash
 
-
 ma = Marshmallow()
 db = SQLAlchemy()
-
+#narsimha
 
 class User(db.Model):
     __tablename__ = 'User'
@@ -19,7 +18,10 @@ class User(db.Model):
         return check_password_hash(self.password, password)
 
 
-''' to serialize the User model Data '''
+class BlacklistedToken(db.Model):
+    __tablename__ = 'BlacklistedToken'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    token = db.Column(db.String(255), unique=True, nullable=False)
 
 
 class UserSchema(ma.Schema):
@@ -27,7 +29,7 @@ class UserSchema(ma.Schema):
     password = fields.String(required=True)
 
 
-''' Other models for reference'''
+# Other models for reference
 # class Comment(db.Model):
 #     __tablename__ = 'comments'
 #     id = db.Column(db.Integer, primary_key=True)
@@ -61,4 +63,3 @@ class UserSchema(ma.Schema):
 #     category_id = fields.Integer(required=True)
 #     comment = fields.String(required=True, validate=validate.Length(1))
 #     creation_date = fields.DateTime()
-

@@ -1,18 +1,19 @@
+"""Below are all the imports for this file."""
 import logging
 from flask import Flask, Blueprint
-from .middleware import Middleware
+from flask_restx import Api
 from service.config import config_by_name
-from .custom_log import get_custom_formatter
-from .models import db
-from flask_restplus import Api
-from .custom_exceptions import errors
 from service.v1.test import api as ns1
 from service.v1.user_views import api as ns2
+from .middleware import Middleware
+from .custom_log import get_custom_formatter
+from .models import db
+from .custom_exceptions import errors
 
 ROOT_URL = '/myservice'
 api = Api(
     title='My Service',
-    version='1.0',
+    version='2.0',
     description='service Details', doc='/swagger/document'
 )
 
@@ -32,7 +33,7 @@ def create_app(config_name):
 
     api.init_app(app)
 
-    # set custom log format
+    # set custom log format\
     formatter = get_custom_formatter(config)
     app.logger.handlers[0].setFormatter(formatter)
 
@@ -40,5 +41,3 @@ def create_app(config_name):
     app.register_blueprint(errors)
 
     return app
-
-

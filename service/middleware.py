@@ -9,4 +9,3 @@ class Middleware(object):
             return start_response(status, headers, exc_info)
 
         return self.app(environ, custom_start_response)
-

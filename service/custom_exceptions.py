@@ -1,5 +1,6 @@
 from flask import jsonify, Blueprint
 
+
 errors = Blueprint('errors', __name__)
 
 
@@ -7,6 +8,7 @@ class CustomException(Exception):
     status_code = 500
 
     def __init__(self, message, status_code=None, payload=None):
+        """Handling the Exceptions"""
         Exception.__init__(self)
         self.message = message
         if status_code is not None:
@@ -14,9 +16,9 @@ class CustomException(Exception):
         self.payload = payload
 
     def to_dict(self):
-        rv = dict(self.payload or ())
-        rv['message'] = self.message
-        return rv, self.status_code
+        result_value = dict(self.payload or ())
+        result_value['message'] = self.message
+        return result_value, self.status_code
 
 
 @errors.app_errorhandler(Exception)

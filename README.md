@@ -4,7 +4,7 @@
 
 Flask service needs these environment variables
 
-    FLASK_ENV=stag
+    FLASK_ENV=dev
     SECRET_KEY=SECRET_KEY
 
 
@@ -52,4 +52,11 @@ Apply the migration script to the database by using the upgrade command
 ### Open docs in browser using link
 
     http://localhost:5000/swagger/document
+
+# Docker process
+  # Docker running command
+    Create docker-compose.yml file
+
+    For building the containers run the below command
+      ---> docker-compose up --build
 

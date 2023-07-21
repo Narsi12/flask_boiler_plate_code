@@ -8,6 +8,7 @@ import sys
 # with open(activate_this) as file_:
 #     exec(file_.read(), dict(__file__=activate_this))
 
+
 config_name = os.environ['FLASK_ENV']
 
 from service.app import create_app
